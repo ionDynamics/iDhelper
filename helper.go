@@ -1,6 +1,8 @@
 package iDhelper
 
 import (
+	"fmt"
+	"os"
 	"time"
 
 	idl "go.iondynamics.net/iDlogger"
@@ -24,16 +26,7 @@ func LoggerQuickSlack(prefix, prioThreshold, slackurl string) {
 	idl.StandardLogger().Async = true
 	idl.SetPrefix(prefix)
 	idl.SetErrCallback(func(err error) {
-		idl.StandardLogger().Async = true
-		idl.Log(&idl.Event{
-			idl.StandardLogger(),
-			map[string]interface{}{
-				"error": err,
-			},
-			time.Now(),
-			priority.Emergency,
-			"Logger caught an internal error",
-		})
+		fmt.Fprintln(os.Stderr, err)
 		panic("Logger caught an internal error")
 	})
 }
