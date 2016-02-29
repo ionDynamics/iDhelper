@@ -1,4 +1,4 @@
-package iDhelper
+package iDhelper //import "go.iondynamics.net/iDhelper"
 
 import (
 	"fmt"

@@ -1,4 +1,4 @@
-package crypto
+package crypto //import "go.iondynamics.net/iDhelper/crypto"
 
 import (
 	"crypto/aes"

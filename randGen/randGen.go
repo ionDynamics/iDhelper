@@ -1,4 +1,4 @@
-package randGen
+package randGen //import "go.iondynamics.net/iDhelper/randGen"
 
 import (
 	"crypto/rand"
